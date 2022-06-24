@@ -191,6 +191,10 @@ describeFast(Mammogram)
 
 stat.desc(Mammogram)
 
+Mammogram %>% na.omit() %>% tbl_continuous(age, include = everything(), by = cancer_cat)
+
+?tbl_continuous
+
 
 
 
