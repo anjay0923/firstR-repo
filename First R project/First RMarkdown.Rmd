@@ -26,6 +26,7 @@ warning = FALSE: Prevents packages and functions from displaying warnings.
 #change
 another change
 please work
+this is a change from Mac
 
 ```{r libraries, echo = FALSE, warning = FALSE, message = FALSE}
 
