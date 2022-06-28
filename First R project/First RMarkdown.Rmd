@@ -31,11 +31,13 @@ here is another change
 
 ```{r libraries, echo = FALSE, warning = FALSE, message = FALSE}
 
-  #library(tidyverse)
-  #library(pastecs)
+  library(tidyverse)
+  library(pastecs)
 
   library(pacman)
   p_load(tidyverse, pastecs, ggplot2, patchwork, knitr)
+  
+
 
 ```
 
@@ -76,6 +78,36 @@ here is another change
 
   
   Mammogram %>% group_by(cancer) %>% summarize(freq = n()) %>% mutate(rel.freq = freq/sum(freq))
+  
+  Mammogram %>% ggplot(aes(menopa_cat, age, fill = menopa_cat)) + geom_violin(trim = FALSE) + stat_summary(fun = mean, geom = "point") + facet_wrap(~ menopa_cat)
+  
+  Mammogram %>% ggplot(aes(menopa_cat, age, fill = menopa_cat)) + geom_violin(trim = FALSE) + stat_summary(fun.data = "mean_sdl", geom = "pointrange")
+  
+  Mammogram %>% ggplot(aes(menopa_cat, age, fill = menopa_cat)) + geom_violin(trim = FALSE) + stat_summary(fun.data = "mean_sdl", mult = 1, geom = "pointrange")
+  
+  Mammogram %>% ggplot(aes(menopa_cat, age, fill = menopa_cat)) + geom_violin(trim = FALSE) + stat_summary(fun.data = "mean_sdl", geom = "pointrange")
+  
+  
+  
+  
+  
+  stat_summary
+  
+  p_unload(hmisc)
+  
+ 
+  
+
+  
+glimpse(Mammogram)
+
+
+
+menopa_cat <- as.factor(menopa_cat)
+  
+?stat_summary
+  
+  
 ```
 
 ### Let's also make a section of code for tinkering
