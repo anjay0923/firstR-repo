@@ -28,6 +28,7 @@ another change
 please work
 this is a change from Mac
 here is another change
+another changeeeee
 
 ```{r libraries, echo = FALSE, warning = FALSE, message = FALSE}
 
@@ -75,9 +76,14 @@ here is another change
   prop
   
   windows.options(antialias = "cleartype")
-
+Mammogram %>% group_by(cancer) %>% summarize(freq = n()) %>% mutate(rel.freq = freq/sum(freq))
   
-  Mammogram %>% group_by(cancer) %>% summarize(freq = n()) %>% mutate(rel.freq = freq/sum(freq))
+  
+  
+  
+  
+  
+  
   
   Mammogram %>% ggplot(aes(menopa_cat, age, fill = menopa_cat)) + geom_violin(trim = FALSE) + stat_summary(fun = mean, geom = "point") + facet_wrap(~ menopa_cat)
   
